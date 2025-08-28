@@ -1,19 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Build for dev') {
             steps {
                 script {
                     echo "Building branch: ${env.BRANCH_NAME}"
                 }
             }
         }
-        stage('Test') {
+        stage('Test in dev') {
             steps {
                 sh 'bash app/hello.sh'
             }
         }
-        stage('Deploy') {
+        stage('Deploying in dev') {
             steps {
                 echo "Deploying branch: ${env.BRANCH_NAME}"
             }
